@@ -1,0 +1,203 @@
+<div class="col-md-10 container">
+  <div class="card-deck">
+    <div class="card mb-3 bg-light text-center">
+      <div class="profile-pic text-center">
+        <img src="{{playerStats?.imageURL}}" class="img-thumbnail rounded float-center" alt="..."
+          onerror="this.onerror=null;this.src='../../assets/default-player-image.png';">
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{playerStats?.name}}</h3>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th scope="row">Full Name</th>
+                <td>{{playerStats?.fullName}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Country</th>
+                <td>{{playerStats?.country}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Age</th>
+                <td>{{playerStats?.currentAge}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Born</th>
+                <td>{{playerStats?.born}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Batting Style</th>
+                <td>{{playerStats?.battingStyle}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Bowling Style</th>
+                <td>{{playerStats?.bowlingStyle}}</td>
+              </tr>
+              <tr>
+                <td colspan="2">{{playerStats?.profile}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div class="table-responsive">
+          <h5 class="card-title">Batting Performance</h5>
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Mat</th>
+                <th scope="col">Inn</th>
+                <th scope="col">NO</th>
+                <th scope="col">Runs</th>
+                <th scope="col">HS</th>
+                <th scope="col">Avg</th>
+                <th scope="col">BF</th>
+                <th scope="col">SR</th>
+                <th scope="col">Cat</th>
+                <th scope="col">Stu</th>
+                <th scope="col">100s</th>
+                <th scope="col">50s</th>
+                <th scope="col">6s</th>
+                <th scope="col">4s</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">Test</th>
+                <td>{{playerStats?.data.batting.testms.mat}}</td>
+                <td>{{playerStats?.data.batting.testms.inns}}</td>
+                <td>{{playerStats?.data.batting.testms.no}}</td>
+                <td>{{playerStats?.data.batting.testms.runs}}</td>
+                <td>{{playerStats?.data.batting.testms.hs}}</td>
+                <td>{{playerStats?.data.batting.testms.ave}}</td>
+                <td>{{playerStats?.data.batting.testms.bf}}</td>
+                <td>{{playerStats?.data.batting.testms.sr}}</td>
+                <td>{{playerStats?.data.batting.testms.ct}}</td>
+                <td>{{playerStats?.data.batting.testms.st}}</td>
+                <td>{{playerStats?.data.batting.testms.centuries}}</td>
+                <td>{{playerStats?.data.batting.testms.fifties}}</td>
+                <td>{{playerStats?.data.batting.testms.sixs}}</td>
+                <td>{{playerStats?.data.batting.testms.fours}}</td>
+              </tr>
+              <tr>
+                <th scope="col">ODI</th>
+                <td>{{playerStats?.data.batting.odis.mat}}</td>
+                <td>{{playerStats?.data.batting.odis.inns}}</td>
+                <td>{{playerStats?.data.batting.odis.no}}</td>
+                <td>{{playerStats?.data.batting.odis.runs}}</td>
+                <td>{{playerStats?.data.batting.odis.hs}}</td>
+                <td>{{playerStats?.data.batting.odis.ave}}</td>
+                <td>{{playerStats?.data.batting.odis.bf}}</td>
+                <td>{{playerStats?.data.batting.odis.sr}}</td>
+                <td>{{playerStats?.data.batting.odis.ct}}</td>
+                <td>{{playerStats?.data.batting.odis.st}}</td>
+                <td>{{playerStats?.data.batting.odis.centuries}}</td>
+                <td>{{playerStats?.data.batting.odis.fifties}}</td>
+                <td>{{playerStats?.data.batting.odis.sixs}}</td>
+                <td>{{playerStats?.data.batting.odis.fours}}</td>
+              </tr>
+              <tr>
+                <th scope="col">T20I</th>
+                <td>{{playerStats?.data.batting.t20s.mat}}</td>
+                <td>{{playerStats?.data.batting.t20s.inns}}</td>
+                <td>{{playerStats?.data.batting.t20s.no}}</td>
+                <td>{{playerStats?.data.batting.t20s.runs}}</td>
+                <td>{{playerStats?.data.batting.t20s.hs}}</td>
+                <td>{{playerStats?.data.batting.t20s.ave}}</td>
+                <td>{{playerStats?.data.batting.t20s.bf}}</td>
+                <td>{{playerStats?.data.batting.t20s.sr}}</td>
+                <td>{{playerStats?.data.batting.t20s.ct}}</td>
+                <td>{{playerStats?.data.batting.t20s.st}}</td>
+                <td>{{playerStats?.data.batting.t20s.centuries}}</td>
+                <td>{{playerStats?.data.batting.t20s.fifties}}</td>
+                <td>{{playerStats?.data.batting.t20s.sixs}}</td>
+                <td>{{playerStats?.data.batting.t20s.fours}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <br>
+        <div class="table-responsive">
+          <h5 class="card-title">Bowling Performance</h5>
+          <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Mat</th>
+                <th scope="col">Inn</th>
+                <th scope="col">Balls</th>
+                <th scope="col">Runs</th>
+                <th scope="col">Wkts</th>
+                <th scope="col">BBI</th>
+                <th scope="col">BBM</th>
+                <th scope="col">Avg</th>
+                <th scope="col">Econ</th>
+                <th scope="col">SR</th>
+                <th scope="col">4w</th>
+                <th scope="col">5w</th>
+                <th scope="col">10w</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="col">Test</th>
+                <td>{{playerStats?.data.bowling.testms.mat}}</td>
+                <td>{{playerStats?.data.bowling.testms.inns}}</td>
+                <td>{{playerStats?.data.bowling.testms.balls}}</td>
+                <td>{{playerStats?.data.bowling.testms.runs}}</td>
+                <td>{{playerStats?.data.bowling.testms.wkts}}</td>
+                <td>{{playerStats?.data.bowling.testms.bbi}}</td>
+                <td>{{playerStats?.data.bowling.testms.bbm}}</td>
+                <td>{{playerStats?.data.bowling.testms.ave}}</td>
+                <td>{{playerStats?.data.bowling.testms.econ}}</td>
+                <td>{{playerStats?.data.bowling.testms.sr}}</td>
+                <td>{{playerStats?.data.bowling.testms.fourper}}</td>
+                <td>{{playerStats?.data.bowling.testms.fiveper}}</td>
+                <td>{{playerStats?.data.bowling.testms.tenper}}</td>
+              </tr>
+              <tr>
+                <th scope="col">ODI</th>
+                <td>{{playerStats?.data.bowling.odis.mat}}</td>
+                <td>{{playerStats?.data.bowling.odis.inns}}</td>
+                <td>{{playerStats?.data.bowling.odis.balls}}</td>
+                <td>{{playerStats?.data.bowling.odis.runs}}</td>
+                <td>{{playerStats?.data.bowling.odis.wkts}}</td>
+                <td>{{playerStats?.data.bowling.odis.bbi}}</td>
+                <td>{{playerStats?.data.bowling.odis.bbm}}</td>
+                <td>{{playerStats?.data.bowling.odis.ave}}</td>
+                <td>{{playerStats?.data.bowling.odis.econ}}</td>
+                <td>{{playerStats?.data.bowling.odis.sr}}</td>
+                <td>{{playerStats?.data.bowling.odis.fourper}}</td>
+                <td>{{playerStats?.data.bowling.odis.fiveper}}</td>
+                <td>{{playerStats?.data.bowling.odis.tenper}}</td>
+              </tr>
+              <tr>
+                <th scope="col">T20I</th>
+                <td>{{playerStats?.data.bowling.t20s.mat}}</td>
+                <td>{{playerStats?.data.bowling.t20s.inns}}</td>
+                <td>{{playerStats?.data.bowling.t20s.balls}}</td>
+                <td>{{playerStats?.data.bowling.t20s.runs}}</td>
+                <td>{{playerStats?.data.bowling.t20s.wkts}}</td>
+                <td>{{playerStats?.data.bowling.t20s.bbi}}</td>
+                <td>{{playerStats?.data.bowling.t20s.bbm}}</td>
+                <td>{{playerStats?.data.bowling.t20s.ave}}</td>
+                <td>{{playerStats?.data.bowling.t20s.econ}}</td>
+                <td>{{playerStats?.data.bowling.t20s.sr}}</td>
+                <td>{{playerStats?.data.bowling.t20s.fourper}}</td>
+                <td>{{playerStats?.data.bowling.t20s.fiveper}}</td>
+                <td>{{playerStats?.data.bowling.t20s.tenper}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <br>
+        <button class="btn btn-info rounded-pill" *ngIf="!isFavourite" (click)="addToFavPlayer()">Add to favourites</button>
+        <br><br><p class="errorMessage" *ngIf="errorMessage !== undefined ">{{errorMessage}}</p>
+
+      </div>
+    </div>
+  </div>
+</div>

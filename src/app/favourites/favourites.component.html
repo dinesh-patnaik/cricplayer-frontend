@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="favourite-players-container">
+    <div class="heading-container">
+      <h5>Favourite Players</h5>
+    </div>
+    <div class="alert alert-info errorMessage-container" *ngIf="infoMessage">
+        {{infoMessage}}
+    </div>
+    <div class="alert alert-danger errorMessage-container" *ngIf="errorMessage">
+        {{errorMessage}}
+    </div>
+    <div class="card-deck">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex playerCard" *ngFor="let favPlayer of favPlayers">
+        <div class="card bg-light mb-3 text-center rounded" *ngIf="favPlayer.fullName">
+          <div class="card-header">
+            <h5>{{favPlayer.name}}</h5>
+          </div>
+          <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">{{favPlayer.country}}</h6>
+            <button type="button" class="btn btn-info btn-sm rounded-pill"
+              (click)="displayPlayerStats(favPlayer.pid)">View Profile</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

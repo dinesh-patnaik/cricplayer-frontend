@@ -1,0 +1,38 @@
+.favourite-players-container{
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.playerCard{
+    margin-bottom: 4vh;
+}
+
+.errorMessage-container{
+    margin-top: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #17a2b8;
+    letter-spacing: 0.1em;
+    text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+.card-deck{
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+@media(max-width:575px){
+    .card{
+        width: 100% !important;
+    }
+}

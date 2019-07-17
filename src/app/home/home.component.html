@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="search-bar-container">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2 rounded-pill" type="search" placeholder="Search for Players"
+                aria-label="Search" [formControl]="name">
+            <button class="btn btn-info ml-sm-2 rounded-pill" type="submit" (click)="searchPlayer()">Search</button>
+        </form>
+    </div>
+
+    <div class="alert alert-warning submitMessage-container" *ngIf="submitMessage != null">
+        {{submitMessage}}
+    </div>
+
+    <div class="alert alert-info submitMessage-container" *ngIf="infoMessage != null">
+        {{infoMessage}}
+    </div>
+
+    <div class="alert alert-danger submitMessage-container" *ngIf="errorMessage != null">
+        {{errorMessage}}
+    </div>
+
+    <div class="search-results-container">
+        <div class="card-deck">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 d-flex playerCard" *ngFor="let player of players">
+                <div class="card bg-light mb-3 text-center rounded" *ngIf="player.fullName">
+                    <div class="card-header">
+                        <h5>{{player.name}}</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">{{player.fullName}}</h6>
+                        <button type="button" class="btn btn-info btn-sm rounded-pill"
+                            (click)="routeToPlayerView(player.pid)">View Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,48 @@
+.container {
+    margin-top: 5vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.search-bar-container,.submitMessage-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submitMessage-container{
+    margin-top: 3vh;
+}
+
+.search-results-container{
+    margin-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover{
+    position:relative;
+    -webkit-box-shadow: 1px 1px 1px 1px black;
+    -moz-box-shadow:    1px 1px 1px 1px black;
+    box-shadow:         1px 1px 1px 1px black;
+}
+
+.playerCard{
+    margin-bottom: 4vh;
+}
+
+.card-deck{
+    margin-top: 2vh;
+    justify-content: center;
+}
+
+@media(max-width:575px){
+    .btn{
+        margin-top: 2vh;
+    }
+
+    .card{
+        width: 100% !important;
+    }
+}

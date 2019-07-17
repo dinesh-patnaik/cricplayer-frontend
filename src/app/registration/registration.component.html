@@ -1,0 +1,82 @@
+<div class="col-md-6 container">
+  <div class="card-deck">
+    <div class="card text-center border-info">
+      <div class="card-header">
+        Registration Form
+      </div>
+      <div class="card-body">
+        <form #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
+          <div class="form-group">
+            <input type="text" class="form-control rounded-pill" placeholder="First Name" [(ngModel)]="user.firstName"
+              name="firstName" #firstName="ngModel" required minlength="3" maxlength="15">
+            <div class="validation-msg"
+              *ngIf="(firstName?.touched || firstName?.dirty) && (firstName.errors?.required)">* First Name is
+              required </div>
+            <div class="validation-msg"
+              *ngIf="(firstName?.touched || firstName?.dirty) && (firstName.errors?.minlength)">* Should be minimum of
+              3 characters</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control rounded-pill" placeholder="Last Name" [(ngModel)]="user.lastName"
+              name="lastName" #lastName="ngModel" required maxlength="12">
+            <div class="validation-msg" *ngIf="(lastName?.touched || lastName?.dirty) && (lastName.errors?.required)">
+              * Last Name is required </div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control rounded-pill" placeholder="Contact Number"
+              [(ngModel)]="user.contactNo" name="contactNo" #contactNo="ngModel" required minlength="10" maxlength="10">
+            <div class="validation-msg"
+              *ngIf="(contactNo?.touched || contactNo?.dirty) && (contactNo.errors?.required)">
+              * Contact Number is required </div>
+            <div class="validation-msg"
+              *ngIf="(contactNo?.touched || contactNo?.dirty) && (contactNo.errors?.minlength)">* Should be of 10
+              digits</div>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control rounded-pill" placeholder="Username" [(ngModel)]="user.userName"
+              name="userName" #userName="ngModel" required minlength="6" maxlength="20">
+            <div class="validation-msg" *ngIf="(userName?.touched || userName?.dirty) && (userName.errors?.required)">
+              * Username is required </div>
+            <div class="validation-msg" *ngIf="(userName?.touched || userName?.dirty) && (userName.errors?.minlength)">*
+              Should be minimum of 6
+              characters</div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control rounded-pill" placeholder="Password" [(ngModel)]="user.password"
+              name="password" #password="ngModel" required minlength="6" maxlength="12">
+            <div class="validation-msg" *ngIf="(password?.touched || password?.dirty) && (password.errors?.required)">
+              * Password is required </div>
+            <div class="validation-msg" *ngIf="(password?.touched || password?.dirty) && (password.errors?.minlength)">*
+              Should be minimum of 6
+              Characters</div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control rounded-pill" placeholder="Confirm Password"
+              [(ngModel)]="user.confirmPassword" name="confirmPassword" #confirmPassword="ngModel" required
+              minlength="6" maxlength="12">
+            <div class="validation-msg"
+              *ngIf="(confirmPassword?.touched || confirmPassword?.dirty) && (confirmPassword.errors?.required)">*
+              Confirm Password is required </div>
+            <div class="validation-msg" *ngIf="password?.value != confirmPassword?.value">* Should match with the
+              entered password </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-info rounded-pill" [disabled]="signupForm.invalid">Register</button>
+          </div>
+
+          <div class="alert alert-success errorMsg-container" *ngIf="successMsg">
+              {{successMsg}}
+          </div>
+      
+          <div class="alert alert-danger errorMsg-container" *ngIf="errorMsg">
+              {{errorMsg}}
+          </div>
+          <div>
+            Already have an account? <button class="btn btn-info btn-sm ml-sm-1 rounded-pill"
+              (click)="redirectToLogin()">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

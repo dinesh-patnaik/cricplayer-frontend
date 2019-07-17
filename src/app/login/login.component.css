@@ -1,0 +1,18 @@
+.validation-msg{
+    color: red;
+}
+
+.container{
+    margin-top: 5vh;
+}
+
+.card-header{
+    font-family: 'Ubuntu', sans-serif;
+    color: #17a2b8;
+    font-weight: 900 !important;
+    font-size: x-large;
+}
+
+.card-body{
+    font-family: 'Ubuntu', sans-serif;
+}
