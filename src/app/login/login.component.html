@@ -1,0 +1,34 @@
+<div class="col-md-6 container">
+  <div class="card-deck">
+    <div class="card text-center border-info">
+      <div class="card-header">
+        Login
+      </div>
+      <div class="card-body">
+        <form #loginForm="ngForm" (ngSubmit)="authenticateUser(loginForm)">
+          <div class="form-group">
+            <input type="text" class="form-control rounded-pill" placeholder="Username" [(ngModel)]="user.userName"
+              name="userName" #userName="ngModel" required>
+            <div class="validation-msg" *ngIf="(userName?.touched || userName?.dirty) && (userName.errors?.required)">
+              * Username is required </div>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control rounded-pill" placeholder="Password" [(ngModel)]="user.password"
+              name="password" #password="ngModel" required>
+            <div class="validation-msg" *ngIf="(password?.touched || password?.dirty) && (password.errors?.required)">
+              * Password is required </div>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-info rounded-pill" [disabled]="loginForm.invalid">Login</button>
+          </div>
+          <div class="alert alert-danger errorMsg-container" *ngIf="errorMsg">
+              {{errorMsg}}
+          </div>
+          <div>Need an account? <button class="btn btn-info btn-sm ml-sm-1 rounded-pill"
+              (click)="routeToRegistrationPage()">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

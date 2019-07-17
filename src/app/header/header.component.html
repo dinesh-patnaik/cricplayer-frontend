@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info">
+  <a class="navbar-brand ml-2 font-weight-bold" routerLink="home">Cric Player</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation" [hidden]="!isLoggedIn">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <button class="btn btn-info ml-sm-2 rounded-pill" [hidden]="!isLoggedIn" routerLink="home">Home<span class="sr-only">(current)</span></button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-info ml-sm-2 rounded-pill" [hidden]="!isLoggedIn" routerLink="favourites">Favourite Players</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-info ml-sm-2 rounded-pill" [hidden]="!isLoggedIn" routerLink="recommendations">Recommended Players</button>
+      </li>
+      <li class="nav-item">
+        <button class="btn btn-info ml-sm-2 rounded-pill" [hidden]="!isLoggedIn" (click)="signOut()">Log Out</button>
+      </li>
+    </ul>
+  </div>
+</nav>
